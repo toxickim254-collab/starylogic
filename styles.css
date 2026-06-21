@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    color: #00ffff;
+    letter-spacing: 3px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #00ffff;
+}
+
+.player-score,
+.computer-score {
+    flex: 1;
+}
+
+.player-score h2,
+.computer-score h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #00ffff;
+}
+
+.player-score p,
+.computer-score p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.game-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    background: #00ffff;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn:hover {
+    background: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+#gameStatus {
+    font-size: 0.9em;
+    color: #ffff00;
+    min-height: 20px;
+}
+
+/* Game Board */
+.game-board {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    background: #0f3460;
+    border: 3px solid #00ffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+.center-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        #00ffff 0,
+        #00ffff 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Paddles */
+.paddle {
+    position: absolute;
+    width: 15px;
+    height: 80px;
+    background: #00ffff;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    transition: background 0.3s ease;
+}
+
+.paddle:hover {
+    background: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+.player-paddle {
+    left: 20px;
+}
+
+.computer-paddle {
+    right: 20px;
+}
+
+/* Ball */
+.ball {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ffff00;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+}
+
+/* Instructions */
+.instructions {
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.instructions h3 {
+    color: #00ffff;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.instructions p {
+    color: #e0e0e0;
+    font-size: 0.95em;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .scoreboard {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .player-score p,
+    .computer-score p {
+        font-size: 2em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+
+    .game-board {
+        aspect-ratio: 4 / 3;
+    }
+
+    .instructions p {
+        font-size: 0.85em;
+    }
+}
