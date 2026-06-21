@@ -1,0 +1,23 @@
+{
+  "name": "starylogic",
+  "version": "1.0.0",
+  "description": "Web developer portfolio and project showcase",
+  "main": "app.js",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "test": "jest"
+  },
+  "keywords": [
+    "web-development",
+    "frontend",
+    "portfolio",
+    "creative-code"
+  ],
+  "author": "toxickim254-collab",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
